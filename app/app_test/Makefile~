@@ -1,0 +1,23 @@
+###########################################
+#Makefile for simple programs
+###########################################
+INC= -L 
+LIB= -lpthread
+ 
+CC=gcc
+CC_FLAG=-Wall
+ 
+PRG=test_app
+OBJ=test_app.o
+ 
+$(PRG):$(OBJ)
+	$(CC) $(INC) $(LIB) -o $@ $(OBJ)
+		      	
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CC_FLAG) $(INC) -c $*.c -o $*.o
+ 
+.PRONY:clean
+clean:
+	echo "Removing linked and compiled files......"
+	rm -f $(OBJ) $(PRG)

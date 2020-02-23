@@ -1,0 +1,17 @@
+#! /bin/sh
+
+source /opt/platform/shell/export_lib
+
+cd /opt/platform/module
+insmod pulse.ko
+insmod gpmc_net.ko
+insmod ch438.ko
+insmod hx_key.ko
+
+cd /opt/platform/shell
+./net_para_set.sh
+./gpio_export.sh
+
+cd /opt/platform/bin
+./cms-svr --daem=1
+

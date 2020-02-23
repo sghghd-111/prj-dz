@@ -1,0 +1,13 @@
+#!/bin/bash
+
+APP_EXPORT_PATH="/opt/njhx/app_export"
+#APP_EXPORT_PATH="./export_lib"
+export LD_LIBRARY_PATH=/opt/platform/lib/:$LD_LIBRARY_PATH
+
+if [ -e $APP_EXPORT_PATH ]; then
+	source $APP_EXPORT_PATH
+	echo "$APP_EXPORT_PATH finish..."
+fi
+
+echo "export lib shell finish..."
+

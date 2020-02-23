@@ -1,0 +1,32 @@
+############################################################# 
+# Makefile for shared library.
+#############################################################
+#set your own environment option
+CC = gcc
+CC_FLAG =
+ 
+#set your inc and lib
+INC = -I ../../include/ 
+LIB = -lpthread -L./
+
+#make target lib and relevant obj 
+PRG = libcmd.so
+OBJ = cmdline.o
+
+#all target
+all:$(PRG)
+
+$(PRG):$(OBJ)
+	$(CC) -shared -o $@ $(OBJ) $(LIB)
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CC_FLAG) $(INC) -c $*.c -o $*.o
+
+.PRONY:clean
+clean:
+	echo "Removing linked and compiled files......"
+	rm -f $(OBJ) $(PRG)
+
+install:
+	echo "install "
+	cp $(PRG) ../../install_dir/lib/
