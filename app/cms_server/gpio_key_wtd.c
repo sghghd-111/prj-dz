@@ -47,7 +47,7 @@ static int peri_wtd_init(pIO_INFO io)
 
 static void peri_wtd_release(pIO_INFO io)
 {
-	pthread_join(&io->peri_wtd_id, NULL);
+	pthread_join(io->peri_wtd_id, NULL);
 	close(io->wdi_fd);
 }
 

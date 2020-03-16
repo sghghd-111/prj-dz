@@ -8,6 +8,7 @@
 #include "wtd_func.h"
 #include "plat_include.h"
 #include "gpio_key_wtd.h"
+#include "led_run.h"
 
 void *main_hdl = NULL;
 
@@ -100,6 +101,7 @@ int main(int argc, char *argv[])
 		goto BC_FUNC_INIT_ERR;
 	}
 #endif
+	led_run_start();
 	kw_init();
 	ipc_msg_listen(hdl);
 

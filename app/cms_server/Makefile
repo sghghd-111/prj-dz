@@ -8,7 +8,9 @@ CC = arm-linux-gnueabihf-gcc
 CC_FLAG = -Wall -O0
 
 PRG = cms-svr
-OBJ = cms_svr.o pulse.o wtd_func.o udp_func.o bc_func.o gpio_key_wtd.o
+SRC = $(wildcard *.c)
+OBJ = $(patsubst %c, %o, $(SRC))
+#OBJ = cms_svr.o pulse.o wtd_func.o udp_func.o bc_func.o gpio_key_wtd.o
 
 $(PRG):$(OBJ)
 	$(CC) $(OBJ) $(INC) $(LIB) -o $@
