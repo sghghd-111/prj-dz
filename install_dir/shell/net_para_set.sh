@@ -1,10 +1,10 @@
 #! /bin/sh
 
 PARA_DIR="/opt/param/"
-
+MOD_DIR="/opt/platform/shell/"
 #NET_SETS=(eth0, eth1, eth2, eth3)
 
-NET_IDX=1
+NET_IDX=167
 
 set_addr()
 {
@@ -38,7 +38,8 @@ set_net_param()
 	if [ -f $ipaddr_path ]; then
 		ipaddr=`cat $ipaddr_path`
 	else
-		ipaddr="192.168.$NET_IDX.112"
+		cp $MOD_DIR$1-ipaddr $PARA_DIR
+		ipaddr="192.168.$2.254"
 		echo "not exist, default $ipaddr"
 		NET_IDX=`expr $NET_IDX + 1`
 #		return 0
@@ -56,8 +57,8 @@ set_net_param()
 
 echo $PARA_DIR
 
-set_net_param eth0
-set_net_param eth1
-set_net_param eth2
-set_net_param eth3
+set_net_param eth0 167
+set_net_param eth1 168
+set_net_param eth2 169
+set_net_param eth3 170
 

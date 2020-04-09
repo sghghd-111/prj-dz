@@ -24,7 +24,7 @@
 static struct gpio_keys_button gpio_buttons[] = {
 	{
 	        .code                   = KEY_UNDO,
-	        .gpio                   = GPIO_TO_PIN(3, 16),
+	        .gpio                   = GPIO_TO_PIN(3, 21),
 	        .active_low             = true,
 	        .desc                   = "recover",
 	        .type                   = EV_KEY,

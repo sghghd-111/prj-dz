@@ -4,6 +4,7 @@ source /opt/platform/shell/export_lib
 
 cd /opt/platform/module
 insmod pulse.ko
+insmod ks8851_mll.ko
 insmod gpmc_net.ko
 insmod ch438.ko
 insmod hx_key.ko
@@ -11,6 +12,17 @@ insmod hx_key.ko
 cd /opt/platform/shell
 ./net_para_set.sh
 ./gpio_export.sh
+./cms-flag-file-check.sh
+
+ln /dev/ttyM0 -s /dev/ttyS1
+ln /dev/ttyM1 -s /dev/ttyS2
+ln /dev/ttyM2 -s /dev/ttyS3
+ln /dev/ttyM3 -s /dev/ttyS4
+ln /dev/ttyM4 -s /dev/ttyS5
+ln /dev/ttyM5 -s /dev/ttyS6
+ln /dev/ttyM6 -s /dev/ttyS7
+ln /dev/ttyM7 -s /dev/ttyS8
+
 
 cd /opt/platform/bin
 ./cms-svr --daem=1

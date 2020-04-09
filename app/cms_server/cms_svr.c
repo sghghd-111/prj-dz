@@ -88,11 +88,13 @@ int main(int argc, char *argv[])
 		LOG_E("IRQ START ER\n");
 		goto PULSE_IRQ_ERR;
 	}
+#if 0
 	if (wtd_init())
 	{
 		LOG_E("watch dog init err\n");
 		goto WTD_INIT_ERR;
 	}
+#endif
 #if 1
 	svr_info->bc_hdl = bc_func_init(10888);
 	if (!svr_info)

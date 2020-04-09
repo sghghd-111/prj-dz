@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_EXPORT_PATH="/opt/njhx/app_export"
+APP_EXPORT_PATH="/opt/sun/app_export"
 #APP_EXPORT_PATH="./export_lib"
 export LD_LIBRARY_PATH=/opt/platform/lib/:$LD_LIBRARY_PATH
 
