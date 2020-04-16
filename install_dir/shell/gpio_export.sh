@@ -49,6 +49,9 @@ ln -s /sys/class/gpio/gpio112/value /dev/di0
 gpio_set_in 113
 ln -s /sys/class/gpio/gpio113/value /dev/di1
 
+#init gpio status
+echo 1 > /dev/led-master
+
 cd -
 
 echo "gpio set finish..."
